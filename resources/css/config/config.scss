@@ -1,0 +1,39 @@
+$app-primary-font: 'Satoshi', sans-serif;
+$app-secondary-font: 'Mersad', sans-serif;
+
+$color-white: #F1F4FE;
+$color-white-80: transparentize(rgba(241, 244, 254), .2);
+$color-white-50: rgba(241, 244, 254, 80);
+
+$color-purple: #602EEE;
+$color-purple-80: rgba(96, 46, 238, 80);
+$color-purple-50: rgba(96, 46, 238, 50);
+
+$color-purple-dark: #1D1626;
+
+//$color-purple-light: transparentize(rgb(73, 61, 84), .85);
+$color-purple-light: rgba(73, 61, 84, 85);
+
+$color-purple-blur: transparentize(rgb(47, 38, 57), .1);
+//$color-purple-blur: rgba(47, 38, 57, 10);
+
+$color-purple-box-background: transparentize(rgb(47, 38, 57), .80);
+//$color-purple-box-background: rgba(47, 38, 57, 10);
+
+$color-purple-shadow: transparentize(rgb(86, 80, 194), .15);
+//$color-purple-shadow: rgba(86, 80, 194, 15);
+
+$color-white-shadow: transparentize(rgba(241, 244, 254), .7);
+$color-white-box-background: transparentize(rgba(241, 244, 254), .5);
+
+$color-green: #6FFAAF;
+
+$color-red: #f55451;
+$color-red-light: transparentize($color-red, .8);
+$color-red-shadow: transparentize($color-red, .15);
+$color-red-box-background: transparentize($color-red, .90);
+
+$color-background: #0B0412;
+
+$header-height: 100px;
+$footer-height: 100px;

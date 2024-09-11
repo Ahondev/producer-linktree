@@ -1,0 +1,9 @@
+/* Webfont: Mersad-Bold */@font-face {
+    font-family: 'Mersad';
+    src: url('./../sources/Mersad Bold.woff2') format('woff2'), /* Modern Browsers */
+         url('./../sources/Mersad Bold.otf') format('opentype'); /* Safari, Android, iOS */
+             font-style: normal;
+    font-weight: 700;
+    text-rendering: optimizeLegibility;
+}
+

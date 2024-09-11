@@ -1,0 +1,9 @@
+/* Webfont: Mersad-Black */ @font-face {
+    font-family: 'Mersad';
+    src: url('./../sources/Mersad Black.woff2') format('woff2'), /* Modern Browsers */
+         url('./../sources/Mersad Black.otf') format('opentype'); /* Safari, Android, iOS */
+             font-style: normal;
+    font-weight: 800;
+    text-rendering: optimizeLegibility;
+}
+

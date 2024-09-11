@@ -1,0 +1,89 @@
+<script setup lang="ts">
+
+import {
+  Menubar,
+  MenubarCheckboxItem,
+  MenubarContent,
+  MenubarItem,
+  MenubarLabel,
+  MenubarMenu,
+  MenubarRadioGroup,
+  MenubarRadioItem,
+  MenubarSeparator,
+  MenubarShortcut,
+  MenubarSub,
+  MenubarSubContent,
+  MenubarSubTrigger,
+  MenubarTrigger,
+} from '@shadcn/components/ui/menubar'
+
+import UserNavigation from "./UserNavigation.vue";
+
+// import CreateProjectDialog from "../entity/project/components/create/CreateProjectDialog.vue";
+import { redirect } from "@/lib/utils";
+import CreateCampaignDialog from "../entity/campaign/components/create/CreateCampaignDialog.vue";
+
+const openCreateCampaignDialog = () => (<HTMLButtonElement>document.querySelector("#create-campaign-dialog-trigger"))
+
+</script>
+
+<template>
+
+  <Menubar class="rounded-none px-2 h-12 lg:px-4 border-b" id="app-menu">
+    <MenubarMenu>
+      <MenubarTrigger class="font-bold">
+        SXKO
+      </MenubarTrigger>
+      <MenubarContent>
+        <MenubarItem @click="redirect('/dashboard')">
+          Accueil
+          <MenubarShortcut>⌘W</MenubarShortcut>
+        </MenubarItem>
+        <MenubarItem @click="redirect('/')">
+          Retourner au site
+          <MenubarShortcut>⌘W</MenubarShortcut>
+        </MenubarItem>
+      </MenubarContent>
+    </MenubarMenu>
+    <MenubarMenu>
+      <MenubarTrigger class="relative">
+        Campagne
+      </MenubarTrigger>
+      <MenubarContent>
+          <MenubarItem @click="redirect('/dashboard/campaigns')">
+              Archive
+              <MenubarShortcut>
+                  <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      class="mr-2 h-4 w-4"
+                  >
+                      <path d="M9 21H15M9 21V16M9 21H3.6C3.26863 21 3 20.7314 3 20.4V16.6C3 16.2686 3.26863 16 3.6 16H9M15 21V9M15 21H20.4C20.7314 21 21 20.7314 21 20.4V3.6C21 3.26863 20.7314 3 20.4 3H15.6C15.2686 3 15 3.26863 15 3.6V9M15 9H9.6C9.26863 9 9 9.26863 9 9.6V16" stroke="currentColor" stroke-width="1.5"></path>
+                  </svg>
+              </MenubarShortcut>
+          </MenubarItem>
+          <MenubarItem @click="openCreateCampaignDialog().click()">
+              Nouveau
+              <MenubarShortcut>⌘C</MenubarShortcut>
+          </MenubarItem>
+      </MenubarContent>
+    </MenubarMenu>
+    <UserNavigation />
+  </Menubar>
+
+  <CreateCampaignDialog>
+    <template #button>
+      <Button class="hidden" id="create-campaign-dialog-trigger"></Button>
+    </template>
+  </CreateCampaignDialog>
+
+</template>
+
+<style scoped>
+#app-menu {
+    position: fixed;
+    width: 100%;
+}
+</style>
