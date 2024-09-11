@@ -60,7 +60,7 @@ setInterval(async () => { emitUpdate() }, 1000)
                 <div class="grid grid-2 gap-3">
                     <div class="flex flex-col gap-1">
                         <Label for="background-type">Thème</Label>
-                        <Tabs :value="theme" @update:modelValue="_theme => setTheme(_theme.value)" class="w-full">
+                        <Tabs :value="theme" @update:modelValue="_theme => setTheme(_theme)" class="w-full">
                             <TabsList class="grid w-full grid-cols-2 mb-2">
                                 <TabsTrigger value="light" :is-default="props.data.campaign.appearance.theme === 'light'"> Clair </TabsTrigger>
                                 <TabsTrigger value="dark" :is-default="props.data.campaign.appearance.theme === 'dark'">Sombre </TabsTrigger>
