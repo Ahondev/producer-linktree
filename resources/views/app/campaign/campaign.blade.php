@@ -1,5 +1,5 @@
 @extends("layout.app")
-@section('title', 'Portfolio')
+@section('title', $campaign->name)
 
 @section('content')
 
