@@ -29,7 +29,7 @@ class PageUpdateRequest extends FormRequest
         return [
             'title' => 'string|required|max:255',
             'text' => 'string|required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
             'links' => 'array',
             'links.*.platform' => 'required|string|in:' . self::getPlatforms(),  // Each link must have a valid platform
             'links.*.url' => 'required|url',  // Each link must have a valid URL
