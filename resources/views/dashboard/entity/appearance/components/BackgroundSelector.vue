@@ -49,7 +49,7 @@ watch(image, (image: File) => { emit('update:media-image', image) })
 <template>
 
     <div class="grid grid-col grid-1 gap-5">
-        <Tabs :value="value" @update:modelValue="_value => setValue(_value.value)" class="w-full">
+        <Tabs :value="value" @update:modelValue="_value => setValue(_value)" class="w-full">
 
             <TabsList class="grid w-full grid-cols-3 mb-2">
                 <TabsTrigger value="color-simple" :is-default="props.defaultType === 'color-simple'"> Couleur </TabsTrigger>
