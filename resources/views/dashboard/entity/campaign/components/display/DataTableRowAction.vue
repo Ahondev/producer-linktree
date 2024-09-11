@@ -80,9 +80,9 @@ const del = async () => {
 <!--      <DropdownMenuItem v-else @click="setFeatured(false)">Unmark as featured</DropdownMenuItem>-->
 
 <!--      <DropdownMenuSeparator />-->
-      <DropdownMenuItem @click="redirect('/dashboard/campaigns/' + props.row.original.link)">Edit</DropdownMenuItem>
+      <DropdownMenuItem @click="redirect('/dashboard/campaigns/' + props.row.original.link)">Modifier</DropdownMenuItem>
       <DropdownMenuItem @click="del()">
-        Delete
+        Supprimer
         <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
       </DropdownMenuItem>
     </DropdownMenuContent>

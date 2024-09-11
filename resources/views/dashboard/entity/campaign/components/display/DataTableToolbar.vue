@@ -25,7 +25,7 @@ const refreshTable = () => { emit("refresh") }
         <template #button>
           <Button>
             <PlusIcon class="mr-2"/>
-            Add new campaign
+            Ajouter une campagne
           </Button>
         </template>
       </CreateDialog>

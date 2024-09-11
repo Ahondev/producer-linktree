@@ -22,13 +22,13 @@ defineProps<DataTablePaginationProps>()
 <template>
   <div class="flex items-center justify-between px-2">
     <div class="flex-1 text-sm text-muted-foreground">
-      {{ table.getFilteredSelectedRowModel().rows.length }} of
-      {{ table.getFilteredRowModel().rows.length }} row(s) selected.
+      {{ table.getFilteredSelectedRowModel().rows.length }} sur
+      {{ table.getFilteredRowModel().rows.length }} rangé(s) sélectionné(s).
     </div>
     <div class="flex items-center space-x-6 lg:space-x-8">
       <div class="flex items-center space-x-2">
         <p class="text-sm font-medium">
-          Rows per page
+          Rangés par page
         </p>
         <Select
             :model-value="`${table.getState().pagination.pageSize}`"
@@ -45,7 +45,7 @@ defineProps<DataTablePaginationProps>()
         </Select>
       </div>
       <div class="flex w-[100px] items-center justify-center text-sm font-medium">
-        Page {{ table.getState().pagination.pageIndex + 1 }} of
+        Page {{ table.getState().pagination.pageIndex + 1 }} sur
         {{ table.getPageCount() }}
       </div>
       <div class="flex items-center space-x-2">

@@ -33,7 +33,7 @@ export const columns: ColumnDef<Campaign>[] = [
     },
     {
         accessorKey: 'name',
-        header: 'Campaign name',
+        header: 'Campagne',
         cell: ({ row }) => {
             return h('a', {
                 href: `/dashboard/campaigns/${row.getValue('link')}`,
@@ -43,7 +43,7 @@ export const columns: ColumnDef<Campaign>[] = [
     },
     {
         accessorKey: 'link',
-        header: 'Campaign link',
+        header: 'Lien',
         cell: ({ row }) => { return `https://${window.env.APP_DOMAIN}/${row.getValue('link')}` },
     },
     {

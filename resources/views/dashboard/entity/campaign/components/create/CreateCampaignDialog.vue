@@ -86,9 +86,9 @@ const focusLinkInput = () => { document.querySelector('#link').focus() }
     </DialogTrigger>
     <DialogContent class="sm:max-w-md">
       <DialogHeader>
-        <DialogTitle>Create a new campaign</DialogTitle>
+        <DialogTitle>Créer une nouvelle campagne</DialogTitle>
         <DialogDescription>
-          Anyone who has this link will be able to view this.
+
         </DialogDescription>
       </DialogHeader>
 
@@ -96,10 +96,10 @@ const focusLinkInput = () => { document.querySelector('#link').focus() }
         <input name="csrf" type="hidden" :value="csrf()" />
         <div class="mb-4 space-y-3">
 
-          <Label for="name">Campaign Name</Label>
-          <Input id="name" placeholder="Campaign Name" v-model="name" />
+          <Label for="name">Nom de la campagne</Label>
+          <Input id="name" placeholder="Nom de la campagne" v-model="name" />
 
-            <Label for="link">Campaign URL</Label>
+            <Label for="link">URL de la campagne</Label>
             <div class="relative w-full max-w-sm items-center" :style="`--prefix-width: ${prefixWidth};`">
               <Input id="link" class="prefix" v-model="link" />
               <span
@@ -119,12 +119,12 @@ const focusLinkInput = () => { document.querySelector('#link').focus() }
 
         <DialogClose as-child>
           <Button type="button" variant="secondary" id="create-campaign-dialog-close-trigger">
-            Close
+            Annuler
           </Button>
         </DialogClose>
 
         <Button type="button" v-if="isComplete()" @click="submit()">
-          Submit
+          Envoyer
         </Button>
 
       </DialogFooter>

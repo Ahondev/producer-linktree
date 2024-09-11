@@ -60,7 +60,9 @@ setInterval(async () => { emitUpdate() }, 1000)
                 <div class="grid grid-2 gap-3">
                     <div class="flex flex-col gap-1">
                         <Label for="background-type">Thème</Label>
-                        <Tabs :value="theme" @update:modelValue="_theme => setTheme(_theme)" class="w-full">
+<!--   THIS FOR LOCAL   <Tabs :value="theme" @update:modelValue="_theme => setTheme(_theme.value)" class="w-full">  -->
+<!--   THIS FOR PRODUCTION   <Tabs :value="theme" @update:modelValue="_theme => setTheme(_theme.value)" class="w-full">  -->
+                        <Tabs :value="theme" @update:modelValue="_theme => setTheme(_theme.value)" class="w-full">
                             <TabsList class="grid w-full grid-cols-2 mb-2">
                                 <TabsTrigger value="light" :is-default="props.data.campaign.appearance.theme === 'light'"> Clair </TabsTrigger>
                                 <TabsTrigger value="dark" :is-default="props.data.campaign.appearance.theme === 'dark'">Sombre </TabsTrigger>
@@ -86,11 +88,15 @@ setInterval(async () => { emitUpdate() }, 1000)
 
             </form>
 
-            <div class="background-preview flex flex-col gap-3">
-<!--                <Label for="background.color-gradiant">Aperçu</Label>-->
+            <div class="background-preview flex flex-col gap-5">
+                        <!--                <Label for="background.color-gradiant">Aperçu</Label>-->
                 <div class="preview-container flex flex-col gap-2 justify-center mx-auto" :class="{'dark': theme === 'dark', 'light': theme === 'light'}">
                     <div class="preview-background" :style="getBackgroundPreview()" />
-                    <div class="preview-text font-bold">Campagne</div>
+                    <div class="preview-title font-bold">Campagne</div>
+                    <div class="preview-cover" :class="{'light': theme === 'light', 'dark': theme === 'dark'}">
+<!--                        <img src=""-->
+                    </div>
+                    <div class="preview-text">Cliquez sur les liens ci dessous</div>
                     <div class="preview-cards grid grid-4 gap-1 mx-auto">
                         <div class="card"></div>
                         <div class="card"></div>
@@ -117,6 +123,7 @@ setInterval(async () => { emitUpdate() }, 1000)
     border-radius: 0.8rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    margin-top: 15%;
 }
 .preview-background {
     position: absolute;
@@ -125,18 +132,32 @@ setInterval(async () => { emitUpdate() }, 1000)
     height: 100%;
     z-index: -1;
 }
+.preview-title {
+    text-align: center;
+    font-size: .8rem;
+}
 .preview-text {
     text-align: center;
-    font-size: 1.4rem;
+    font-size: .5em;
 }
+.preview-cover {
+    height: 45px;
+    width: 45px;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+.preview-cover.dark { background-color: #121212; }
+.preview-cover.light { background-color: #f7f7f7; }
 .card {
-    height: 50px;
-    width: 50px;
+    height: 25px;
+    width: 25px;
     border-radius: 4px;
 }
 .preview-container.dark .card { background-color: #121212; }
 .preview-container.dark .preview-text { color: #f7f7f7; }
+.preview-container.dark .preview-title { color: #f7f7f7; }
 
 .preview-container.light .card { background-color: #f7f7f7; }
 .preview-container.light .preview-text { color: #121212; }
+.preview-container.light .preview-title { color: #121212; }
 </style>
