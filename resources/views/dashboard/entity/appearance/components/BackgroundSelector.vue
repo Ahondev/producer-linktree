@@ -49,7 +49,7 @@ watch(image, (image: File) => { emit('update:media-image', image) })
 <template>
 
     <div class="grid grid-col grid-1 gap-5">
-        <Tabs :value="value" @update:modelValue="_value => setValue(_value.value)" class="w-full">
+        <Tabs :value="value" @update:modelValue="_value => setValue(_value)" class="w-full">
 <!--   THIS FOR LOCAL   <Tabs :value="value" @update:modelValue="_value => setValue(_value.value)" class="w-full">  -->
 <!--   THIS FOR PRODUCTION   <Tabs :value="value" @update:modelValue="_value => setValue(_value)" class="w-full">  -->
 

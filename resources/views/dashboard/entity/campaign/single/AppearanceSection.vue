@@ -62,7 +62,7 @@ setInterval(async () => { emitUpdate() }, 1000)
                         <Label for="background-type">Thème</Label>
 <!--   THIS FOR LOCAL   <Tabs :value="theme" @update:modelValue="_theme => setTheme(_theme.value)" class="w-full">  -->
 <!--   THIS FOR PRODUCTION   <Tabs :value="theme" @update:modelValue="_theme => setTheme(_theme.value)" class="w-full">  -->
-                        <Tabs :value="theme" @update:modelValue="_theme => setTheme(_theme.value)" class="w-full">
+                        <Tabs :value="theme" @update:modelValue="_theme => setTheme(_theme)" class="w-full">
                             <TabsList class="grid w-full grid-cols-2 mb-2">
                                 <TabsTrigger value="light" :is-default="props.data.campaign.appearance.theme === 'light'"> Clair </TabsTrigger>
                                 <TabsTrigger value="dark" :is-default="props.data.campaign.appearance.theme === 'dark'">Sombre </TabsTrigger>
