@@ -18,7 +18,7 @@ class IsAdministrator
         $user = auth()->user();
 
         if($user === null) { return redirect("/"); }
-        if($user->email !== "admin@ahon.dev") { return redirect("/"); }
+        if($user->email !== "admin@sxko666.com") { return redirect("/"); }
 
         return $next($request);
     }

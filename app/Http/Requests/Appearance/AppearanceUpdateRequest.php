@@ -16,7 +16,7 @@ class AppearanceUpdateRequest extends FormRequest
     {
         if(env("APP_ENV") === "local"){ return true; }
         if(auth()->user() === null){ return false; }
-        return auth()->user()->email === "admin@ahon.dev";
+        return auth()->user()->email === "admin@sxko666.com";
     }
 
     /**
