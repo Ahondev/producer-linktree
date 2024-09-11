@@ -10,9 +10,6 @@ use Symfony\Component\HttpFoundation\Response;
 class IsAdministrator
 {
 
-//    const ADMINISTRATOR_EMAIL = "admin@sxko666.com";
-    const ADMINISTRATOR_EMAIL = "admin@ahon.dev";
-
     /**
      * Handle an incoming request.
      *
@@ -23,10 +20,12 @@ class IsAdministrator
         $user = auth()->user();
 
         if($user === null) { return redirect("/"); }
-        if($user->email !== self::ADMINISTRATOR_EMAIL) { return redirect("/"); }
+        if($user->email !== self::adminEmail()) { return redirect("/"); }
 
         return $next($request);
     }
+
+    public static function adminEmail() { return env('ADMIN_EMAIL'); }
 
     public static function authorize() {
 
@@ -43,7 +42,7 @@ class IsAdministrator
         $user = $tokenData->tokenable;
         if(!$user) { return false; }
 
-        return $user->email === self::ADMINISTRATOR_EMAIL;
+        return $user->email === self::adminEmail();
 
     }
 
