@@ -23,5 +23,6 @@
     </body>
 
     @vite(['resources/js/app.js'])
+    <script defer data-domain="sxko666.com" src="https://analytics.ahon.dev/js/script.js"></script>
 
 </html>
