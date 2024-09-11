@@ -9,7 +9,7 @@ window.env = {
     APP_DEBUG: import.meta.env.VITE_DEBUG === "true",
     APP_DOMAIN: import.meta.env.VITE_APP_DOMAIN,
     APP_URL: import.meta.env.VITE_APP_URL,
-    is_dev: () => { return import.meta.env.VITE_APP_ENV !== 'prod' && import.meta.env.VITE_APP_ENV !== 'production' },
+    is_dev: () => { return import.meta.env.VITE_APP_ENV !== 'production' },
 }
 
 /**
