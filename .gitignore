@@ -17,3 +17,10 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+.phpstorm.meta.php
+_ide_helper.php
+composer.lock
+package-lock.json
+vite.config.js.old
+yarn.lock
+.editorconfig
