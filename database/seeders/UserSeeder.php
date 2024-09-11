@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Http\Middleware\IsAdministrator;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,7 +15,7 @@ class UserSeeder extends Seeder
     {
         \App\Models\User::factory()->create([
             'name' => 'Admin',
-            'email' => 'admin@sxko666.com',
+            'email' => IsAdministrator::ADMINISTRATOR_EMAIL,
             'password' => 'NQPCsm48nl0w4Zk'
         ]);
     }

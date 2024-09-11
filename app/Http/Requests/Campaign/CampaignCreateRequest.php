@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Campaign;
 
+use App\Http\Middleware\IsAdministrator;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CampaignCreateRequest extends FormRequest
@@ -11,7 +12,7 @@ class CampaignCreateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return IsAdministrator::authorize();
     }
 
     /**

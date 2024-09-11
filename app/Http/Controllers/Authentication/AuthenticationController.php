@@ -24,9 +24,10 @@ class AuthenticationController extends DashboardController
             if($email !== $admin->email){ return response(false, 403); }
             if(!Hash::check($password, $admin->password)){ return response(false, 403); }
 
+            $token = $admin->createToken('Admin Token')->plainTextToken;
             Auth::login($admin);
 
-            return response(true, 200);
+            return response()->json(['success' => true, 'token' => $token]);
 
         }
         return redirect("/");

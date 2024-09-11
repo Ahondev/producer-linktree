@@ -2,9 +2,11 @@
 
 namespace App\Http\Requests\Page;
 
+use App\Http\Middleware\IsAdministrator;
 use App\Types\Appearance\ThemesTypes;
 use App\Types\Link\PlatformTypes;
 use Illuminate\Foundation\Http\FormRequest;
+use Laravel\Sanctum\PersonalAccessToken;
 
 class PageUpdateRequest extends FormRequest
 {
@@ -13,9 +15,7 @@ class PageUpdateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        if(env("APP_ENV") === "local"){ return true; }
-        if(auth()->user() === null){ return false; }
-        return auth()->user()->email === "admin@sxko666.com";
+        return IsAdministrator::authorize();
     }
 
     /**

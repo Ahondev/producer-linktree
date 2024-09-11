@@ -59,7 +59,10 @@ export default {
                 })
             }
 
-            if (response.status === 200) { redirect("/dashboard") }
+            if (response.status === 200) {
+                localStorage.setItem("auth_token", response.data.token)
+                redirect("/dashboard")
+            }
         }
     }
 }

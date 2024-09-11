@@ -19,10 +19,12 @@ export const request = async (httpMethod: any, url: string, data = false) => {
 
     try {
 
+    const token = localStorage.getItem('auth_token')
     const headers = {
       'X-CSRF-TOKEN': csrf(),
       'Access-Control-Allow-Origin': domain(),
-      'Access-Control-Allow-Headers': 'X-CSRF-TOKEN, X-Requested-With'
+      'Access-Control-Allow-Headers': 'X-CSRF-TOKEN, X-Requested-With',
+      'Authorization': `Bearer ${token}`
     }
 
     if(data){ return await httpMethod(url, data, {headers: headers}) }

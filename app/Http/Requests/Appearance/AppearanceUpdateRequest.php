@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Appearance;
 
+use App\Http\Middleware\IsAdministrator;
 use App\Types\Appearance\BackgroundTypes;
 use App\Types\Appearance\ThemesTypes;
 use App\Types\Link\PlatformTypes;
@@ -14,9 +15,7 @@ class AppearanceUpdateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        if(env("APP_ENV") === "local"){ return true; }
-        if(auth()->user() === null){ return false; }
-        return auth()->user()->email === "admin@sxko666.com";
+        return IsAdministrator::authorize();
     }
 
     /**
