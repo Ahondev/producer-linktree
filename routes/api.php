@@ -33,35 +33,21 @@ Route::prefix("campaign")->group(function () {
     Route::post("/", [CampaignController::class, "create"]);
     Route::get("/{slug}", [CampaignController::class, "get"]);
     Route::delete("/{slug}", [CampaignController::class, "delete"]);
-//    Route::post("/{slug}", [CampaignController::class, "action"]);
 
-});
+})->middleware('auth:sanctum');
 
 // api.website.com/page
 // slug is associated campaign slug
 
 Route::prefix("page")->group(function () {
-
-//    Route::get("/all", [PageController::class, "all"]);
-//    Route::post("/", [PageController::class, "create"]);
-//    Route::get("/{slug}", [PageController::class, "get"]);
     Route::put("/{slug}", [PageController::class, "put"]);
-//    Route::delete("/{slug}", [PageController::class, "delete"]);
-//    Route::post("/{slug}", [PageController::class, "action"]);
-
-});
+})->middleware('auth:sanctum');
 
 // api.website.com/appearance
 // slug is associated campaign slug
 
 Route::prefix("appearance")->group(function () {
-
-//    Route::get("/all", [PageController::class, "all"]);
-//    Route::post("/", [PageController::class, "create"]);
-//    Route::get("/{slug}", [PageController::class, "get"]);
     Route::put("/{slug}", [AppearanceController::class, "put"]);
-//    Route::delete("/{slug}", [PageController::class, "delete"]);
-//    Route::post("/{slug}", [PageController::class, "action"]);
 
-});
+})->middleware('auth:sanctum');
 
