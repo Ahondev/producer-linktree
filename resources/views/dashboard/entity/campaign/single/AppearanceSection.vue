@@ -29,7 +29,7 @@ const image = ref<File>(null)
 const imageURL = ref<string>("/uploads/placeholder.png")
 
 const theme = ref<'light' | 'dark'>(props.data.campaign.appearance.theme)
-const setTheme = (_theme: 'light' | 'dark'): void => { theme.value = _theme }
+const setTheme = (_theme: 'light' | 'dark'): void => { console.log('SET THEME :', _theme); theme.value = _theme }
 
 watch(image, (image) => { imageURL.value = URL.createObjectURL(image) })
 
