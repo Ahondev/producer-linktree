@@ -25,7 +25,7 @@ class Image extends Model
 
     public static function getPlaceholder(): int { return self::$PLACEHOLDER_IMAGE_ID; }
 
-    public function source() {
+    public function getSourceAttribute() {
         if(env('APP_ENV') === 'production') { return 'storage/' . $this->attributes['source']; }
         else { return $this->attributes['source']; }
     }
